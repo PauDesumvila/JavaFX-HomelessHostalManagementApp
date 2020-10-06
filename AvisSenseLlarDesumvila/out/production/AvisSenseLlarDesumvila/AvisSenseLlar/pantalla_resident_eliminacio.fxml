@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AvisSenseLlar.PantallaResidentEliminacioController">
+   <children>
+      <GridPane layoutX="4.0" layoutY="3.0" prefHeight="391.0" prefWidth="594.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="206.0" minHeight="10.0" prefHeight="206.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="190.0" minHeight="10.0" prefHeight="185.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="376.0" text="CODI RESIDENT A MODIFICAR: ">
+               <font>
+                  <Font name="Arial Bold" size="18.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+            </Label>
+            <TextField fx:id="tfCodi" promptText="Introdueixi codi..." GridPane.columnIndex="1">
+               <GridPane.margin>
+                  <Insets left="20.0" right="20.0" />
+               </GridPane.margin>
+               <padding>
+                  <Insets left="20.0" right="20.0" />
+               </padding>
+            </TextField>
+            <GridPane GridPane.columnIndex="1" GridPane.rowIndex="1">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Button fx:id="btElimina" mnemonicParsing="false" onMouseClicked="#eliminaResident" prefHeight="88.0" prefWidth="148.0" text="ELIMINA" GridPane.columnIndex="1">
+                     <GridPane.margin>
+                        <Insets left="20.0" right="20.0" />
+                     </GridPane.margin>
+                     <font>
+                        <Font name="Arial Bold" size="18.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btTanca" mnemonicParsing="false" onMouseClicked="#tancaFinestra" prefHeight="89.0" prefWidth="149.0" text="TANCA">
+                     <GridPane.margin>
+                        <Insets left="20.0" right="20.0" />
+                     </GridPane.margin>
+                     <font>
+                        <Font name="Arial Bold" size="18.0" />
+                     </font>
+                  </Button>
+               </children>
+            </GridPane>
+            <GridPane GridPane.rowIndex="1">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label fx:id="lbElimina" alignment="CENTER" prefHeight="17.0" prefWidth="389.0" text="RESIDENT ELIMINAT CORRECTAMENT" textFill="#57bc0a" visible="false">
+                     <font>
+                        <Font name="Arial Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lbError" alignment="CENTER" prefHeight="17.0" prefWidth="379.0" text="CODI ERRONI. RESIDENT NO ELIMINAT" textFill="RED" visible="false" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Arial Bold" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </GridPane>
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,75 @@
+\sql
+\connect root@localhost
+SET GLOBAL time_zone = '-3:00';
+
+# CREACIO BASE DE DADES AVIS SENSE LLAR
+
+DROP DATABASE BDAvisSenseLlar;
+
+CREATE DATABASE BDAvisSenseLlar;
+
+
+
+
+# CREACIO TAULA RESIDENTS
+
+USE BDAvisSenseLlar;
+
+CREATE TABLE residents(
+	codi INT,
+	nom VARCHAR(50),
+	DNI VARCHAR(9),
+	edat INT,
+	cadiraRodes BOOLEAN,
+	necesitaEnfermera BOOLEAN,
+	estaIngresat BOOLEAN,
+	codiRecinteIngres INT,
+	CONSTRAINT residents_pk PRIMARY KEY (codi)
+);
+
+INSERT INTO residents (codi, nom, DNI, edat, cadiraRodes, necesitaEnfermera, estaIngresat, codiRecinteIngres)
+	VALUES (001, "Maria Garcia", "23545767Y", 40, false, false, false, 0); 
+INSERT INTO residents (codi, nom, DNI, edat, cadiraRodes, necesitaEnfermera, estaIngresat, codiRecinteIngres)
+	VALUES (002, "Pere Fernandez", "40888777R", 36, true, true, false, 0); 
+INSERT INTO residents (codi, nom, DNI, edat, cadiraRodes, necesitaEnfermera, estaIngresat, codiRecinteIngres)
+	VALUES (003, "Andrea Marquez", "43212323L", 29, false, false, false, 0); 
+INSERT INTO residents (codi, nom, DNI, edat, cadiraRodes, necesitaEnfermera, estaIngresat, codiRecinteIngres)
+	VALUES (004, "Marc Gonzalez", "43112332G", 53, false, false, false, 0); 
+INSERT INTO residents (codi, nom, DNI, edat, cadiraRodes, necesitaEnfermera, estaIngresat, codiRecinteIngres)
+	VALUES (005, "Julia Gomez", "39748768J", 35, false, false, false, 0); 
+INSERT INTO residents (codi, nom, DNI, edat, cadiraRodes, necesitaEnfermera, estaIngresat, codiRecinteIngres)
+	VALUES (006, "Andreu Lopez", "49128657G", 42, true, false, false, 0); 
+INSERT INTO residents (codi, nom, DNI, edat, cadiraRodes, necesitaEnfermera, estaIngresat, codiRecinteIngres)
+	VALUES (007, "Carla Font", "37968543T", 53, false, true, false, 0); 
+INSERT INTO residents (codi, nom, DNI, edat, cadiraRodes, necesitaEnfermera, estaIngresat, codiRecinteIngres)
+	VALUES (008, "Josep Pou", "26543456U", 24, true, true, false, 0); 
+
+
+
+
+
+
+# CREACIO TAULA RECINTES
+
+USE BDAvisSenseLlar;
+
+CREATE TABLE recintes(
+	codi INT,
+	nomRecinte VARCHAR(50),
+	direccio VARCHAR(70),
+	propietari VARCHAR(50),
+	numPlacesTotals INT,
+	numPlacesOcupades INT,
+	adaptatCadiraRodes BOOLEAN,
+	disposaEnfermera BOOLEAN,
+	CONSTRAINT recintes_pk PRIMARY KEY (codi)
+);
+
+INSERT INTO recintes (codi, nomRecinte, direccio, propietari, numPlacesTotals, numPlacesOcupades, adaptatCadiraRodes, disposaEnfermera)
+	VALUES (001, "Gimnas La Pau", "C/ Gran Via 344", "Gimnas La Pau S.L.", 20, 0, false, false);
+INSERT INTO recintes (codi, nomRecinte, direccio, propietari, numPlacesTotals, numPlacesOcupades, adaptatCadiraRodes, disposaEnfermera)
+	VALUES (002, "Hostal La Gavina", "C/ Arago 560", "Ajuntament de Barcelona", 40, 0, true, false);
+INSERT INTO recintes (codi, nomRecinte, direccio, propietari, numPlacesTotals, numPlacesOcupades, adaptatCadiraRodes, disposaEnfermera)
+	VALUES (003, "Hotel El Sol", "Av/ Diagonal 201", "Hotel El Sol S.A.", 30, 0, false, true);
+INSERT INTO recintes (codi, nomRecinte, direccio, propietari, numPlacesTotals, numPlacesOcupades, adaptatCadiraRodes, disposaEnfermera)
+	VALUES (004, "Polideportiu La Pilota", "C/ Prim 105", "Ajuntament de Barcelona", 10, 0, true, true);
